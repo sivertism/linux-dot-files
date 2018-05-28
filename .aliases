@@ -1,0 +1,17 @@
+# Utility
+alias hg="history | grep -is"
+
+# Open directories
+alias msc="cd ~/git/MSc-Project/"
+alias doc="cd ~/git/MSc-Project/doc/"
+
+# Git
+alias gc="git commit -am"
+alias gp="git push origin master"
+alias gst="git status"
+alias gd="git diff *.c *.h *.ld"
+
+# Change theme
+# Setup random wallpaper
+# feh --bg-max --randomize ~/.wallpapers/* &
+alias theme="wal -a 30 -i '/home/sivert/.wallpapers'"
