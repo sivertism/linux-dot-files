@@ -54,12 +54,17 @@ assign [class="Xilinx SDK"] 3
 assign [class="Mendeley Desktop"] 4
 assign [instance="pdfranger"] 5
 assign [class="Thunderbird"] 6
+assign [instance="work"] 2
 
 # # Startup apps
 exec "firefox"
 exec "mendeleydesktop"
 exec "thunderbird"
 exec $term -name pdfranger -e ranger --choosedir=~/Documents/msc-documents
+exec $term -name work
+
+# # Set up theme
+exec "wal -a 30 -i '/home/sivert/.wallpapers'"
 
 # # Dropdown/scratchpad windows # #
 for_window [instance="dropdown"] floating enable
