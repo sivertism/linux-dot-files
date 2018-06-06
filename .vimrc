@@ -51,7 +51,7 @@ let mapleader =" "
 
 " Open corresponding.pdf
 	map <leader>p :!mupdf ../output/<c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
-	map <leader>o :!mupdf ../output/main.pdf &<CR><CR>
+	map <leader>o :!mupdf main.pdf &<CR><CR>
 
 " Compile document
 	autocmd FileType tex map <leader>c :!xelatex main.tex -o ../output/main.pdf <CR><CR>
@@ -105,6 +105,8 @@ let mapleader =" "
 	autocmd FileType tex inoremap <F5> <Esc>:!xelatex<space><c-r>%<Enter>a
 	autocmd FileType tex nnoremap <F5> :!xelatex<space><c-r>%<Enter>
 	" Code snippets
+	autocmd FileType tex inoremap ;m $$ <++><Esc>F$i
+	autocmd FileType tex inoremap ;eqn \begin{equation}<Enter><++><Enter>\end{equation}<Enter><Enter><++><Esc>4kA\label{eqn:}<Esc>i
 	autocmd FileType tex inoremap ;lst \begin{lstlisting}<Enter><++><Enter>\end{lstlisting}<Enter><Enter><++><Esc>4kA[float, language=c, caption=""]<Esc>F"i
 	autocmd FileType tex inoremap ;fig \begin{figure}<Enter><Space><Space>\centering<Enter><Space><Space>\includegraphics[scale=1]<Enter><Space><Space>\caption{<++>}<Enter><Space><Space>\label{fig:<++>}<Enter>\end{figure}<Enter><Enter><++><Esc>5kA{}<Esc>T{i
 
@@ -132,9 +134,9 @@ let mapleader =" "
 	autocmd FileType tex inoremap ;a \href{}{<++>}<Space><++><Esc>2T{i
 	autocmd FileType tex inoremap ;sc \textsc{}<Space><++><Esc>T{i
 	autocmd FileType tex inoremap ;chap \chapter{}<Enter>\label{chap:<++>}<Enter><Enter><++><Esc>3kf}i
-	autocmd FileType tex inoremap ;sec \section{}<Enter><Enter><++><Esc>2kf}i
-	autocmd FileType tex inoremap ;ssec \subsection{}<Enter><Enter><++><Esc>2kf}i
-	autocmd FileType tex inoremap ;sssec \subsubsection{}<Enter><Enter><++><Esc>2kf}i
+	autocmd FileType tex inoremap ;sec \section{}\label{sec:<++>}<Enter><++><Esc>kf}i
+	autocmd FileType tex inoremap ;ssec \subsection{}\label{subsec:<++>}<Enter><++><Esc>kf}i
+	autocmd FileType tex inoremap ;sssec \subsubsection{}<Enter><Enter><++><Esc>2kf}i\label{sec:}<Esc>i
 	autocmd FileType tex inoremap ;st <Esc>F{i*<Esc>f}i
 	autocmd FileType tex inoremap ;beg \begin{DELRN}<Enter><++><Enter>\end{DELRN}<Enter><Enter><++><Esc>4k0fR:MultipleCursorsFind<Space>DELRN<Enter>c
 	autocmd FileType tex inoremap ;up <Esc>/usepackage<Enter>o\usepackage{}<Esc>i
