@@ -11,6 +11,7 @@ let mapleader =" "
 	set encoding=utf-8
 	set number
 	set relativenumber
+	set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow
@@ -57,7 +58,7 @@ let mapleader =" "
 	autocmd FileType tex map <leader>c :!xelatex main.tex -o ../output/main.pdf <CR><CR>
 	autocmd FileType markdown,rmd map <leader>c :!pandoc expand('%:e') -o outdir/expand('%').pdf
 " Live preview
-	let g:livepreview_previewer = 'mupdf'
+	let g:livepreview_previewer = "mupdf"
 	map <leader>l :LLPStartPreview main.tex
 
 "For saving view folds:
@@ -105,7 +106,8 @@ let mapleader =" "
 	autocmd FileType tex inoremap <F5> <Esc>:!xelatex<space><c-r>%<Enter>a
 	autocmd FileType tex nnoremap <F5> :!xelatex<space><c-r>%<Enter>
 	" Code snippets
-	autocmd FileType tex inoremap ;m $$ <++><Esc>F$i
+	autocmd FileType tex inoremap ;alg \begin{algorithm}\label{alg:<CR>\caption{<++>}<CR>\begin{algorithmic}[1]<CR>\Function{<++>}{<++>}<CR><++><CR>\EndFunction<CR>\end{algorithmic}<CR>\end{algorithm}<CR><CR><++><Esc>9kA}<Esc>i
+	autocmd FileType tex inoremap ;m $$<++><Esc>F$i
 	autocmd FileType tex inoremap ;eqn \begin{equation}<Enter><++><Enter>\end{equation}<Enter><Enter><++><Esc>4kA\label{eqn:}<Esc>i
 	autocmd FileType tex inoremap ;lst \begin{lstlisting}<Enter><++><Enter>\end{lstlisting}<Enter><Enter><++><Esc>4kA[float, language=c, caption=""]<Esc>F"i
 	autocmd FileType tex inoremap ;fig \begin{figure}<Enter><Space><Space>\centering<Enter><Space><Space>\includegraphics[scale=1]<Enter><Space><Space>\caption{<++>}<Enter><Space><Space>\label{fig:<++>}<Enter>\end{figure}<Enter><Enter><++><Esc>5kA{}<Esc>T{i
