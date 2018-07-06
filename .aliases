@@ -1,7 +1,7 @@
 # Utility
 alias hg="history | grep -is"
 alias la="ls -a"
-alias ll="ls -l"
+alias ll="ls -hl"
 
 # Open directories
 alias msc="cd ~/git/MSc-Project/"
@@ -14,11 +14,10 @@ alias gst="git status"
 alias gd="git diff *.c *.h *.ld"
 
 # VPN Norway
-alias vpn="sudo openvpn .airvpn/AirVPN_NO-Oslo_Fomalhaut_UDP-443.ovpn &"
+#alias vpn="sudo openvpn .airvpn/AirVPN_NO-Oslo_Fomalhaut_UDP-443.ovpn &"
 # Change theme
 
-ls ~/.airvpn/Air*
 # Change theme
 # Setup random wallpaper
 # feh --bg-max --randomize ~/.wallpapers/* &
-alias theme="wal -a 30 -i '/home/sivert/.wallpapers'"
+alias theme="wal -a 70 -i ~/.wallpapers/"
