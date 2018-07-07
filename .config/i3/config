@@ -104,8 +104,9 @@ bindsym $mod+d exec dmenu_run
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
+#bindsym $mod+l focus up
 bindsym $mod+oslash focus right
+bindsym $mod+l exec i3lock-fancy
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -158,7 +159,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-bindsym $mod-t -e wal -i ~/.wallpapers -a 70
+bindsym $mod-t exec wal -i ~/.wallpapers -a 70
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -212,3 +213,17 @@ bindsym $mod+p resize grow width 10 px or 10 ppt
 bar {
         status_command i3status
 }
+
+
+# Multimedia keys
+
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+## Volume control
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
