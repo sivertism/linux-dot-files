@@ -3,6 +3,10 @@ alias gh="history | grep -is"
 alias la="ls -a"
 alias ll="ls -hl"
 
+# Internet
+alias lswifi="nmcli dev wifi"
+alias cwifi="nmcli device wifi connect "
+
 # Edit configs
 alias cfi="vi ~/.config/i3/config"
 alias cfb="vi ~/.bashrc"
