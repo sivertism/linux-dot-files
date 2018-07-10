@@ -1,5 +1,5 @@
 # Utility
-alias hg="history | grep -is"
+alias gh="history | grep -is"
 alias la="ls -a"
 alias ll="ls -hl"
 
@@ -7,6 +7,7 @@ alias ll="ls -hl"
 alias cfi="vi ~/.config/i3/config"
 alias cfb="vi ~/.bashrc"
 alias cfa="vi ~/.aliases"
+alias cfbl="sudo vi /sys/class/backlight/intel_backlight/brightness
 
 # Open directories
 alias msc="cd ~/git/MSc-Project/"
