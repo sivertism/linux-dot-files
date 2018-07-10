@@ -7,7 +7,7 @@ alias ll="ls -hl"
 alias cfi="vi ~/.config/i3/config"
 alias cfb="vi ~/.bashrc"
 alias cfa="vi ~/.aliases"
-alias cfbl="sudo vi /sys/class/backlight/intel_backlight/brightness
+alias cfbl="sudo vi /sys/class/backlight/intel_backlight/brightness"
 
 # Open directories
 alias msc="cd ~/git/MSc-Project/"
