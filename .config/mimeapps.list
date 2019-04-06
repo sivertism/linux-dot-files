@@ -1,0 +1,10 @@
+[Default Applications]
+x-scheme-handler/mailto=userapp-Thunderbird-GRP0VZ.desktop
+message/rfc822=userapp-Thunderbird-GRP0VZ.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=thunderbird.desktop;userapp-Thunderbird-GRP0VZ.desktop;
+message/rfc822=thunderbird.desktop;userapp-Thunderbird-GRP0VZ.desktop;
+text/x-bibtex=org.gnome.gedit.desktop;
+image/jpeg=gimp.desktop;
+application/pdf=inkscape.desktop;

@@ -1,2 +1,10 @@
 :q
+rename hibernus
+open_with 
+open_witd
+set show_hidden true
+
+search svg
 delete
+q
+quit

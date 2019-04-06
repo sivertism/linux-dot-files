@@ -1,27 +1,57 @@
+# Randoms
+alias mspagent="~/ti/msp430-gcc/bin/gdb_agent_console ~/ti/msp430-gcc/msp430.dat"
+alias tcpmon="sudo tcpflow -i any -C -g port "
+
 # Utility
 alias gh="history | grep -is"
 alias la="ls -a"
 alias ll="ls -hl"
+alias rr="rm -r"
+alias cp="cp -r"
+
+# Programming
+alias msp430agent="~/ti/msp430-gcc/bin/gdb_agent_console ~/ti/msp430-gcc/msp430.dat"
+alias mspgdb="msp430-elf-gdb --tui"
 
 # Internet
 alias lswifi="nmcli dev wifi"
-alias cwifi="nmcli device wifi connect "
+alias cwifi="echo 'Usage: ssid [password pw]'&& nmcli device wifi connect "
+alias rstwifi="sudo service network-manager restart"
+alias gpvpn="globalprotect connect -p globalprotect.soton.ac.uk -u sts1u16"
+alias gpvpndisc="globalprotect disconnect"
+
+# Display
+alias disp="xrandr --auto"
+alias disp2="xrandr --output DP1 --auto --above eDP1"
+alias disp3="xrandr --auto --output HDMI1 --above eDP1 --output DP2 --right-of HDMI1"
+alias disp4="xrandr --auto --output HDMI1 --above eDP1 --output DP2 --left-of HDMI1 --rotate left"
 
 # Edit configs
 alias cfi="vi ~/.config/i3/config"
 alias cfb="vi ~/.bashrc"
 alias cfa="vi ~/.aliases"
 alias cfbl="sudo vi /sys/class/backlight/intel_backlight/brightness"
+alias cfv="vi ~/.vimrc"
 
 # Open directories
 alias msc="cd ~/git/MSc-Project/"
 alias doc="cd ~/git/MSc-Project/doc/"
+alias pdir="cd ~/git/hibernus_static_memory_manager/doc"
+alias ndir="cd ~/git/phd_notes"
 
 # Git
 alias gc="git commit -am"
 alias gp="git push origin master"
 alias gst="git status"
 alias gd="git diff *.c *.h *.ld"
+
+# Vim
+alias va="vim -p *.tex"
+alias notes="vim -p ~/git/phd_notes/*.md ~/git/hibernus_static_memory_manager/doc/*.md"
+alias paper="cd ~/git/hibernus_static_memory_manager/doc && vim -p *.tex"
+
+# Latex
+alias texclean="rm *.{aux,dvi,fdb_latexmk,fls,blg,bbl,out,lot,lof,log,lol}"
 
 # VPN Norway
 #alias vpn="sudo openvpn .airvpn/AirVPN_NO-Oslo_Fomalhaut_UDP-443.ovpn &"
@@ -31,3 +61,4 @@ alias gd="git diff *.c *.h *.ld"
 # Setup random wallpaper
 # feh --bg-max --randomize ~/.wallpapers/* &
 alias theme="wal -a 70 -i ~/.wallpapers/"
+alias ss='~/Pictures/import 1534320763.png'

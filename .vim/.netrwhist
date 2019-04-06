@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/sts1u16/Downloads/mendeleydesktop-1.19.1-linux-x86_64'
+let g:netrw_dirhist_2='/home/sts1u16/Downloads'
+let g:netrw_dirhist_3='/sys/class/leds/dell::kbd_backlight'
+let g:netrw_dirhist_4='/home/sts1u16/git/MSc-Project/doc/src'
+let g:netrw_dirhist_5='/home/sts1u16/git/hibernus_static_memory_manager/Debug'
+let g:netrw_dirhist_6='/sys/class/leds/dell::kbd_backlight'
+let g:netrw_dirhist_7='/home/sts1u16/Public'
+let g:netrw_dirhist_8='/home/sts1u16/matlab'
+let g:netrw_dirhist_9='/home/sts1u16/git/phd_notes'

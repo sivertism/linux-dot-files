@@ -1,0 +1,44 @@
+[directory]
+nautilus-icon-view-keep-aligned=true
+nautilus-icon-view-layout-timestamp=1553705638
+nautilus-desktop-icon-size=48
+
+[trash]
+nautilus-icon-position-timestamp=1553705638
+nautilus-icon-position=56,186
+icon-scale=1
+
+[usbstick.volume]
+nautilus-icon-position=56,306
+icon-scale=1
+nautilus-icon-position-timestamp=1531989411
+
+[OSDisk.volume]
+nautilus-icon-position=56,306
+icon-scale=1
+nautilus-icon-position-timestamp=1537544719
+
+[PMHOME.volume]
+nautilus-icon-position=56,306
+icon-scale=1
+nautilus-icon-position-timestamp=1537545008
+
+[32 GB Volume.volume]
+nautilus-icon-position=56,426
+icon-scale=1
+nautilus-icon-position-timestamp=1537545008
+
+[Seagate Expansion Drive.volume]
+nautilus-icon-position=56,306
+icon-scale=1
+nautilus-icon-position-timestamp=1551356632
+
+[63 GB Volume.volume]
+nautilus-icon-position=56,306
+icon-scale=1
+nautilus-icon-position-timestamp=1551360765
+
+[DISK_IMG.volume]
+nautilus-icon-position=56,306
+icon-scale=1
+nautilus-icon-position-timestamp=1551360852

@@ -30,20 +30,49 @@ font pango:monospace 8
 set $term --no-startup-id urxvt
 
 for_window [class="^.*"] border pixel 3
-gaps inner 15
-gaps outer 15
+gaps inner 10
+gaps outer 5
 smart_gaps on
 
+# Display
+#exec --no-startup-id xrandr --output HDMI1 --auto
+#exec --no-startup-id xrandr --output eDP1 --above HDMI1
+
+# Wifi
+exec --no-startup-id nm-applet
+
+# Automount USB drives
+exec --no-startup-id udiskie
+
+# Dictionary on tray
+exec --no-startup-id artha
+
+# Wallpaper and terminal colours
+#exec --no-startup-id "wal -a 70 -i ${HOME}/.wallpapers"
+
+# Multimonitor workspace
+workspace 1 output eDP1
+workspace 2 output HDMI1
+workspace 3 output HDMI1
+workspace 4 output DP2
+workspace 5 output DP2
+workspace 6 output eDP1
+workspace 7 output eDP1
+workspace 8 output DP2
+workspace 9 output DP2
+workspace 10 output HDMI1
+
 # Transparency
-exec compton
+exec --no-startup-id compton
 
 # # Default workspace setup
 # 1: Firefox
 # 2: Randoms
 # 3: Work
-# 4: Mendeley
+# 4: Zotero
 # 5: PDF
 # 6: Email
+# 7: Spotify
 #
 assign [class="Firefox"] 1
 # Number 2 is used as a generic/randoms workspace
@@ -51,15 +80,16 @@ assign [class="Vivado"] 2
 assign [class="ranger"] 2
 assign [class="Java"] 3
 assign [class="Xilinx SDK"] 3
-assign [class="Mendeley Desktop"] 4
+assign [class="Zotero"] 4
 assign [instance="pdfranger"] 5
 assign [class="Thunderbird"] 6
 assign [instance="work"] 2
+assign [instance="Spotify"] 7
 
 # # Startup apps
-exec "firefox"
-exec "mendeleydesktop"
-exec "thunderbird"
+exec --no-startup-id "firefox"
+exec --no-startup-id "zotero"
+exec --no-startup-id "thunderbird"
 exec $term -name pdfranger -e ranger --choosedir=~/Documents/msc-documents
 exec $term -name work
 
@@ -73,20 +103,33 @@ for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 5
 exec --no-startup-id $term -name dropdown -bg 0x000000 -e tmux
 
+for_window [instance="notes"] floating enable
+for_window [instance="notes"] resize set 1600 1000
+for_window [instance="notes"] move scratchpad
+for_window [instance="notes"] border pixel 5
+exec $term -name notes -bg 0x000000 -cd ~/git/phd_notes -e vi schedule.md
+
 for_window [instance="math"] floating enable
 for_window [instance="math"] resize set 800 300
 for_window [instance="math"] move scratchpad
 for_window [instance="math"] border pixel 5
 exec --no-startup-id $term -name math -bg 0x000000 -f mono:pixelsize=24 -e python
 
+# Matlab figures
+for_window [title="Figure 1"] floating enable
+
 # Bindings for dropdown terminals
 bindsym $mod+h      [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 bindsym $mod+a      [instance="math"] scratchpad show; [instance="math"] move position center
+bindsym $mod+n      [instance="notes"] scratchpad show; [instance="notes"] move position center
 
 bindsym $mod+r      exec $term -e ranger
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+# Snipping tool
+bindsym $mod+s exec --no-startup-id import $(date +%s).png
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -136,7 +179,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -194,7 +237,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Lock screen etc
 bindsym $mod+Shift+l --no-startup-id i3exit lock, mode "default"
 bindsym $mod+Shift+h --no-startup-id i3exit hibernate, mode "default"
-bindsym $mod+Shift+s --no-startup-id i3exit shutdown, mode "default"
+#bindsym $mod+Shift+s --no-startup-id i3exit shutdown, mode "default"
 
 # resize window (you can also use the mouse for that)
 # These bindings trigger as soon as you enter the resize mode
@@ -218,8 +261,8 @@ bar {
 # Multimedia keys
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 3 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 3 # decrease screen brightness
 
 ## Volume control
 # Pulse Audio controls

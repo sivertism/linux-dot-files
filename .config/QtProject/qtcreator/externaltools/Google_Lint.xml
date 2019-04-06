@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Written on Mon Dec 17 16:32:19 2018 by Qt Creator 4.5.2-->
+<externaltool id="Google_Lint">
+    <description>Run lint on current CPP file</description>
+    <displayname>Google Lint</displayname>
+    <category></category>
+    <executable output="showinpane" error="showinpane" modifiesdocument="no">
+        <path>/usr/local/bin/cpplint.py</path>
+        <arguments>%{CurrentDocument:FilePath}</arguments>
+    </executable>
+</externaltool>
