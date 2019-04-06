@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/vim-grammarous"]
 	path = .vim/bundle/vim-grammarous
 	url = https://github.com/rhysd/vim-grammarous.git
+[submodule ".vim/bundle/vim-latex-live-preview"]
+	path = .vim/bundle/vim-latex-live-preview
+	url = https://github.com/xuhdev/vim-latex-live-preview.git
